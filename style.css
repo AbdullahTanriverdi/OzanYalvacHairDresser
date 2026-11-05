@@ -1,0 +1,339 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-main: #1c1c1e;
+    --bg-card: #2c2c2e;
+    --bg-darker: #141415;
+    --text-primary: #f2f2f7;
+    --text-secondary: #aaaaae;
+    --accent: #8e8e93;
+    --accent-hover: #ffffff;
+    --border-color: #3a3a3c;
+}
+
+.logo-makas {
+    width: 400px;
+    height: 240px;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden; /* Yatay kaymayı tamamen engeller */
+}
+
+/* Header & Navbar */
+header {
+    background-color: rgba(28, 28, 30, 0.98);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.logo span {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 4px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.nav-links li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    transition: 0.3s;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-hover);
+}
+
+/* Hero (Ana Sayfa) */
+.hero {
+    min-height: 85vh;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 7rem 1.5rem 3rem 1.5rem; /* Header altında kalmasın diye top-padding artırıldı */
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero-content h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem); /* Ekran küçüldükçe otomatik küçülür, asla taşmaz */
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+}
+
+.hero-content p {
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Butonlar */
+.btn {
+    display: inline-block;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-main);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Genel Bölüm Stilleri */
+.section {
+    padding: 4rem 1.5rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
+}
+
+/* Hizmetler Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.service-card i {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+}
+
+/* Galeri Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    filter: grayscale(40%);
+    transition: 0.3s;
+}
+
+.gallery-item img:hover {
+    filter: grayscale(0%);
+}
+
+/* İletişim Formu & Bilgiler */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.contact-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    margin-top: 1.2rem;
+}
+
+.social-links a {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent);
+}
+
+#form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.8rem 1rem;
+    background-color: #0d0d0e;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* -------------------------------------------------- */
+/* KESİN MOBİL DÜZELTMELERİ (@media)                  */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+    header {
+        position: relative; /* Mobilde header'ın üstü kapatmasını engeller */
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 0.8rem 1rem;
+        gap: 0.8rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem 0.6rem;
+    }
+
+    .nav-links li a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 3.5rem 1rem; /* Padding mobil boyutuna uyacak şekilde azaltıldı */
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem; /* Mobilde taşmayan net boyut */
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+}
