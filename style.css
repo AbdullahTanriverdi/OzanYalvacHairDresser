@@ -242,15 +242,26 @@ header {
     gap: 10px;
     font-size: 0.95rem;
 }
-
 .social-links {
     margin-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 10; /* Diğer katmanların altında kalıp tıklanmayı engellemesini önler */
 }
 
 .social-links a {
     color: var(--text-primary);
     font-size: 1.4rem;
-    margin-right: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
 }
 
 /* DÜZELTİLEN KISIM: HTML'deki id="form" yapısına tam uyumlu hale getirildi */
